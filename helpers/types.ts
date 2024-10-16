@@ -1,11 +1,21 @@
 import { BigNumber } from '@ethersproject/bignumber';
+import { BigNumberish, Signer } from 'ethers/lib/ethers';
 
 export interface SymbolMap<T> {
   [symbol: string]: T;
 }
 
 export type eNetwork = eEthereumNetwork;
+export enum AssetType {
+  AToken,
+  VariableDebtToken,
+  StableDebtToken,
+}
 
+export enum TransferStrategy {
+  PullRewardsStrategy,
+  StakedRewardsStrategy,
+}
 export enum eEthereumNetwork {
   kovan = 'kovan',
   ropsten = 'ropsten',
@@ -66,7 +76,6 @@ export enum eContractid {
   MockInitializableFromConstructorImple = 'MockInitializableFromConstructorImple',
   MockReentrantInitializableImple = 'MockReentrantInitializableImple',
 }
-
 /*
  * Error messages
  */
@@ -330,12 +339,16 @@ export interface IReserveBorrowParams {
   stableBorrowRateEnabled: boolean;
   reserveDecimals: string;
   borrowCap: string;
+  debtCeiling: string;
+  borrowableIsolation: boolean;
+  flashLoanEnabled: boolean;
 }
 
 export interface IReserveCollateralParams {
   baseLTVAsCollateral: string;
   liquidationThreshold: string;
   liquidationBonus: string;
+  liquidationProtocolFee?: string;
 }
 export interface IMarketRates {
   borrowRate: string;
@@ -384,31 +397,69 @@ export interface ICommonConfiguration {
   VariableDebtTokenNamePrefix: string;
   SymbolPrefix: string;
   ProviderId: number;
-  ProtocolGlobalParams: IProtocolGlobalConfig;
-  Mocks: IMocksConfig;
-  ProviderRegistry: tEthereumAddress | undefined;
-  ProviderRegistryOwner: tEthereumAddress | undefined;
-  PoolConfigurator: tEthereumAddress | undefined;
-  Pool: tEthereumAddress | undefined;
-  TokenDistributor: tEthereumAddress | undefined;
-  AaveOracle: tEthereumAddress | undefined;
-  FallbackOracle: tEthereumAddress | undefined;
-  ChainlinkAggregator: tEthereumAddress | undefined;
-  PoolAdmin: tEthereumAddress | undefined;
-  PoolAdminIndex: number;
-  EmergencyAdmin: tEthereumAddress | undefined;
-  EmergencyAdminIndex: number;
-  ReserveAssets: SymbolMap<tEthereumAddress> | SymbolMap<undefined>;
-  ReservesConfig: iMultiPoolsAssets<IReserveParams>;
-  ATokenDomainSeparator: string;
-  WETH: tEthereumAddress | undefined;
-  WrappedNativeToken: tEthereumAddress | undefined;
+  TestnetMarket?: boolean;
+  ProviderRegistryOwner?: tEthereumAddress | undefined;
+  FallbackOracle?: tEthereumAddress;
+  ChainlinkAggregator: ITokenAddress;
+  WrappedTokenGateway?: tEthereumAddress;
   ReserveFactorTreasuryAddress: tEthereumAddress;
-  IncentivesController: tEthereumAddress | undefined;
+  StableDebtTokenImplementation?: tEthereumAddress;
+  VariableDebtTokenImplementation?: tEthereumAddress;
+  ReserveAssets?: SymbolMap<tEthereumAddress>;
+  OracleQuoteCurrency: string;
+  OracleQuoteUnit: string;
+  OracleQuoteCurrencyAddress: tEthereumAddress;
+  ReservesConfig: SymbolMap<IReserveParams>;
+  WrappedNativeTokenSymbol: string; // ex: WETH or WMATIC
+  IncentivesConfig: IncentivesConfig;
+  EModes: SymbolMap<EMode>;
+  L2PoolEnabled?: iParamsPerNetwork<boolean>;
+  StkAaveProxy?: iParamsPerNetwork<tEthereumAddress>;
+  ParaswapRegistry?: iParamsPerNetwork<tEthereumAddress>;
+  FlashLoanPremiums: {
+    total: number;
+    protocol: number;
+  };
+  RateStrategies: IStrategy;
 }
 
+export interface IncentivesConfig {
+  enabled: iParamsPerNetwork<boolean>;
+  rewards: iParamsPerNetwork<SymbolMap<tEthereumAddress>>;
+  rewardsOracle: iParamsPerNetwork<SymbolMap<tEthereumAddress>>;
+  incentivesInput: iParamsPerNetwork<RewardsConfigInput[]>;
+}
+
+export interface ITokenAddress {
+  [token: string]: tEthereumAddress;
+}
+
+export interface RewardsConfigInput {
+  emissionPerSecond: BigNumberish;
+  duration: number;
+  asset: string;
+  assetType: AssetType;
+  reward: string;
+  rewardOracle: string;
+  transferStrategy: TransferStrategy;
+  transferStrategyParams: string;
+}
+
+export interface EMode {
+  id: string;
+  ltv: string;
+  liquidationThreshold: string;
+  liquidationBonus: string;
+  label: string;
+  oracleId?: string;
+  assets: string[];
+}
 export interface IAaveConfiguration extends ICommonConfiguration {
   ReservesConfig: iMultiPoolsAssets<IReserveParams>;
+}
+
+export interface IStrategy {
+  [key: string]: IInterestRateStrategyParams;
 }
 
 export type PoolConfiguration = ICommonConfiguration | IAaveConfiguration;

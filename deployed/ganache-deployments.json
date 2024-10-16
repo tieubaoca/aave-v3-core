@@ -1,0 +1,185 @@
+{
+  "0x3C1cA092601fea0056FD10EE66618e388a160813": {
+    "contract": "0x3C1cA092601fea0056FD10EE66618e388a160813",
+    "args": [
+      "0x86b71eE506373FCCf26d53B8996035b1643CF5b6"
+    ]
+  },
+  "0x5367a4509eF9E73B7dDa58fe0EB134eeFA4e6aEB": {
+    "name": "SupplyLogic",
+    "contract": "0x5367a4509eF9E73B7dDa58fe0EB134eeFA4e6aEB",
+    "args": []
+  },
+  "0x0bf964C858c021e0eA82532eB6BbD1587B3c2238": {
+    "name": "BorrowLogic",
+    "contract": "0x0bf964C858c021e0eA82532eB6BbD1587B3c2238",
+    "args": []
+  },
+  "0x5e572Da748D4Ff2CA766eA64A0E1C003ea0cd209": {
+    "name": "LiquidationLogic",
+    "contract": "0x5e572Da748D4Ff2CA766eA64A0E1C003ea0cd209",
+    "args": []
+  },
+  "0x679619d094a90c9116406dc4B47aB9dDfF7FCeeB": {
+    "name": "EModeLogic",
+    "contract": "0x679619d094a90c9116406dc4B47aB9dDfF7FCeeB",
+    "args": []
+  },
+  "0xFdfCeB7e8bb25854dC04468AC7f3A94333145F81": {
+    "name": "BridgeLogic",
+    "contract": "0xFdfCeB7e8bb25854dC04468AC7f3A94333145F81",
+    "args": []
+  },
+  "0xd1f18453987d3Fc38Eac0Ecd382A9a3D6E88d073": {
+    "name": "ConfiguratorLogic",
+    "contract": "0xd1f18453987d3Fc38Eac0Ecd382A9a3D6E88d073",
+    "args": []
+  },
+  "0x5746972F39350e4E843eEbA0242b1FA99Cae5c9A": {
+    "name": "FlashLoanLogic",
+    "contract": "0x5746972F39350e4E843eEbA0242b1FA99Cae5c9A",
+    "args": []
+  },
+  "0xc6d6FB61a7B194A30c7B6E9a13fB7C4993Dcd352": {
+    "name": "PoolLogic",
+    "contract": "0xc6d6FB61a7B194A30c7B6E9a13fB7C4993Dcd352",
+    "args": []
+  },
+  "0x779a1D06F689F682A50F2A33405FaFE25983C003": {
+    "name": "PoolAddressesProvider",
+    "contract": "0x779a1D06F689F682A50F2A33405FaFE25983C003",
+    "args": [
+      "MARKET ID",
+      "0x86b71eE506373FCCf26d53B8996035b1643CF5b6"
+    ]
+  },
+  "0x85C05554da1384D84079befA484E23fc14Bbd039": {
+    "name": "AaveProtocolDataProvider",
+    "contract": "0x85C05554da1384D84079befA484E23fc14Bbd039",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003"
+    ]
+  },
+  "0xCc2A94f68699E5D77E92aCB1f5d6E05a584eAB33": {
+    "name": "Pool",
+    "contract": "0xCc2A94f68699E5D77E92aCB1f5d6E05a584eAB33",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003"
+    ]
+  },
+  "0x1732F7d7F66e8fc54729077Fc3c83AFD0288fDd3": {
+    "name": "PoolConfigurator",
+    "contract": "0x1732F7d7F66e8fc54729077Fc3c83AFD0288fDd3",
+    "args": []
+  },
+  "0xAe90fF0d376aFE706967DC6C005a3CF24aAcD22F": {
+    "name": "ReservesSetupHelper",
+    "contract": "0xAe90fF0d376aFE706967DC6C005a3CF24aAcD22F",
+    "args": []
+  },
+  "0xA9b6D026b2D729D12425C799f882979EC3E63556": {
+    "name": "ACLManager",
+    "contract": "0xA9b6D026b2D729D12425C799f882979EC3E63556",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003"
+    ]
+  },
+  "0x7c171d5aed1ab1d4E4dA7B3B209F317B4ad26ecA": {
+    "name": "AaveOracle",
+    "contract": "0x7c171d5aed1ab1d4E4dA7B3B209F317B4ad26ecA",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003",
+      [
+        "0xA996c91BB16E2259A98e8af9Bf8D5036a6e6d228",
+        "0x80f6fBdBB4be124524470F14607FdfdE730f67BA",
+        "0x2747675D96AF1563924e7B791acEeb368f10D2d0",
+        "0x33421f67f177ABaD0484Af3b5B612FeE3a8dC769"
+      ],
+      [
+        "0x93c13FA4A95e9b74c3b62Aa6bC4374aD8E9Fa8d7",
+        "0x12b3AD2a1d7fDA5350B5b9cdB1115Ded8cF34F6F",
+        "0x9bCBeace6085137be3C0a318026f59E1fea095b0",
+        "0x4Eac208143B0822590e21b07E90C60F8B9b9c3a3"
+      ],
+      "0x0000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000",
+      "100000000"
+    ]
+  },
+  "0xd165BcCF4a14B5f327CCEf43aA5F27984A9E0d23": {
+    "name": "AToken",
+    "contract": "0xd165BcCF4a14B5f327CCEf43aA5F27984A9E0d23",
+    "args": [
+      "0x743D652E032Ef47E514aE3659bEa1d58d68019CB"
+    ]
+  },
+  "0x5F41c7b2381851c513553A82D2B68e48306dd68b": {
+    "name": "DelegationAwareAToken",
+    "contract": "0x5F41c7b2381851c513553A82D2B68e48306dd68b",
+    "args": [
+      "0x743D652E032Ef47E514aE3659bEa1d58d68019CB"
+    ]
+  },
+  "0x666301d4D5c598e3A852Be9a12AE89C4eAD42d4F": {
+    "name": "StableDebtToken",
+    "contract": "0x666301d4D5c598e3A852Be9a12AE89C4eAD42d4F",
+    "args": [
+      "0x743D652E032Ef47E514aE3659bEa1d58d68019CB"
+    ]
+  },
+  "0x0A84acAbCaa1f4DCB0015F6b6279284095cc3bA7": {
+    "name": "VariableDebtToken",
+    "contract": "0x0A84acAbCaa1f4DCB0015F6b6279284095cc3bA7",
+    "args": [
+      "0x743D652E032Ef47E514aE3659bEa1d58d68019CB"
+    ]
+  },
+  "0x68e4f684c5F62057C07d498e2842030b79549BE3": {
+    "name": "DefaultReserveInterestRateStrategy",
+    "contract": "0x68e4f684c5F62057C07d498e2842030b79549BE3",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003",
+      "450000000000000000000000000",
+      "0",
+      "70000000000000000000000000",
+      "3000000000000000000000000000",
+      "0",
+      "0",
+      "20000000000000000000000000",
+      "50000000000000000000000000",
+      "200000000000000000000000000"
+    ]
+  },
+  "0xD334944B683Ca7a876103a9440Cd50A74e5C3272": {
+    "name": "DefaultReserveInterestRateStrategy",
+    "contract": "0xD334944B683Ca7a876103a9440Cd50A74e5C3272",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003",
+      "900000000000000000000000000",
+      "0",
+      "40000000000000000000000000",
+      "600000000000000000000000000",
+      "20000000000000000000000000",
+      "600000000000000000000000000",
+      "20000000000000000000000000",
+      "50000000000000000000000000",
+      "200000000000000000000000000"
+    ]
+  },
+  "0x9aff2d488Cff38dEA234822aa258E9dB1b1A2432": {
+    "name": "DefaultReserveInterestRateStrategy",
+    "contract": "0x9aff2d488Cff38dEA234822aa258E9dB1b1A2432",
+    "args": [
+      "0x779a1D06F689F682A50F2A33405FaFE25983C003",
+      "800000000000000000000000000",
+      "0",
+      "40000000000000000000000000",
+      "750000000000000000000000000",
+      "20000000000000000000000000",
+      "750000000000000000000000000",
+      "20000000000000000000000000",
+      "50000000000000000000000000",
+      "200000000000000000000000000"
+    ]
+  }
+}
