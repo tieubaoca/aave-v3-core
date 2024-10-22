@@ -38,5 +38,7 @@
   "variableDebtToken": "0x0d6817955502370F080793Cf4C46810Db4Ab9B16",
   "rateStrategyVolatileOne": "0xCb46543f98D9286b57Ed151C06b4B6C345334e30",
   "rateStrategyStableOne": "0xbeb4D37FA33AfB6e62DEEf4356C02b1edb2e7937",
-  "rateStrategyStableTwo": "0x998800cc9bD717AbF3f71C5CC1A7FDf6ed700046"
+  "rateStrategyStableTwo": "0x998800cc9bD717AbF3f71C5CC1A7FDf6ed700046",
+  "lowerCaseTokenSymbol": "0xaD52E63D13F67E38Db122749d633cE48ffa311f4",
+  "priceAggregatorName": "0xAfb205c1ab6c8a22980dd156a9cc51Aa87a0DFD2"
 }
